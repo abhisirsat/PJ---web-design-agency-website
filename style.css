@@ -79,17 +79,28 @@ footer {
     text-align: center;
   }
 
-  .card {
+  /* Reset floating and width for mobile */
+  .left, .right, .card {
+    float: none;
     width: 100%;
-    display: block;
+    height: auto; /* Allow card to grow with content */
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
     margin-bottom: 30px;
-    text-align: justify;
+    padding-bottom: 20px; /* Space at the bottom of the card */
   }
 
-  .card img {
-    margin-bottom: 10px;
-    width: 100%;
-    display: inline;
-    object-fit: cover;
+  .tile-image {
+    float: none; /* Remove the float */
+    width: 100%; /* Image takes full width of card */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0;
+    margin-bottom: 15px; /* Space between image and text */
+    border-radius: 12px 12px 0 0; /* Match card top rounding */
+  }
+
+  .card-title, .card p {
+    padding: 0 20px; /* Add some padding so text isn't touching edges */
+    text-align: left;
   }
 }
